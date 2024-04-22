@@ -1,9 +1,6 @@
-const heading = React.createElement(
-    "h1",
-    {id:"heading"},
-    "Hello World"
-);
-
+const heading = React.createElement("h1", {
+    id: "heading"
+}, "Hello World");
 // const data = React.createElement(
 //   "div",
 //   { id: "parent" },
@@ -16,3 +13,5 @@ const heading = React.createElement(
 // );
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(heading);
+
+//# sourceMappingURL=index.6bd02f5a.js.map
