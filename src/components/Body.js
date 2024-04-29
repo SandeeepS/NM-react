@@ -1,11 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RestorentCard from "./RestorentCard";
 import resList from "../utils/mockData";
 
 const Body = () => {
   const [resList2,setList] = useState(resList);
 
-  return (
+  useEffect(()=> {
+     fetchData();
+  })
+
+  const fetchData = async ()=> {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      
+    );
+    const json = await data.json();
+    console.log("fetched data are ");
+    console.log(json);
+    setList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  }
+
+  return ( 
     <div className="body">
       <div className="filter">
         <button
