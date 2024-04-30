@@ -7,8 +7,9 @@ const Body = () => {
 
   useEffect(()=> {
      fetchData();
-  })
+  },[])
 
+  //fetching data using live api
   const fetchData = async ()=> {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
@@ -16,9 +17,11 @@ const Body = () => {
     );
     const json = await data.json();
     console.log("fetched data are ");
-    console.log(json);
+    console.log("json data "+json);
     setList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    console.log("setlist is :" + resList2)
   }
+ 
 
   return ( 
     <div className="body">
@@ -34,6 +37,7 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container">
+       
         {resList2.map((restorent) => (
           <RestorentCard key={restorent.id} data={restorent} />
         ))}
