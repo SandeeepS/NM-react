@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import RestorentCard from "./RestorentCard";
-import resList from "../utils/mockData";
+import Shimmer from "./shimmer";
 
 const Body = () => {
-  const [resList2,setList] = useState(resList);
+  const [resList2,setList] = useState([]);
 
-  useEffect(()=> {
-     fetchData();
-  },[])
+  // useEffect(()=> {
+  //    fetchData();
+  // },[])
 
   //fetching data using live api
   const fetchData = async ()=> {
@@ -16,14 +16,14 @@ const Body = () => {
       
     );
     const json = await data.json();
-    console.log("fetched data are ");
-    console.log("json data "+json);
     setList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     console.log("setlist is :" + resList2)
   }
+
+
  
 
-  return ( 
+  return resList2.length === 0 ? <Shimmer/> : ( 
     <div className="body">
       <div className="filter">
         <button
