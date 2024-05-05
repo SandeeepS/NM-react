@@ -7,12 +7,13 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurent,setFilteredRestaurent] = useState([]);
 
+  
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  console.log("body rendered ");
+  console.log("body rendered "); 
 
   //fetching data using live api
   const fetchData = async () => {
@@ -29,7 +30,7 @@ const Body = () => {
   };
 
   return resList2.length === 0 ? (
-    <Shimmer />
+    <Shimmer />  //added shimmer
   ) : (
     <div className="body">
       <div className="filter">
