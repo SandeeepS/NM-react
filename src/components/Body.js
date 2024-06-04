@@ -8,7 +8,7 @@ const Body = () => {
   const [filteredRestaurent,setFilteredRestaurent] = useState([]);
 
   
-
+ //fetching the data
   useEffect(() => {
     fetchData();
   }, []);
