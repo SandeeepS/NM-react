@@ -30,7 +30,7 @@ const Body = () => {
   };
 
   return resList2.length === 0 ? (
-    <Shimmer />  //added shimmer
+    <Shimmer />  
   ) : (
     <div className="body">
       <div className="filter">
