@@ -70,6 +70,7 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurent.map((restorent) => (
+          //restocards 
           <RestorentCard key={restorent.id} data={restorent} />
         ))}
       </div>
