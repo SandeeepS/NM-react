@@ -12,9 +12,7 @@ const Shimmer = () => {
              <div className="shimmer-cards">Cards</div>
              <div className="shimmer-cards">Cards</div>
              <div className="shimmer-cards">Cards</div>
-             
         </div>
-
     )
 }
 
