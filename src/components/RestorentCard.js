@@ -1,5 +1,6 @@
 import { CDN_URL } from "../utils/constants";
 
+//restorentcard
 const RestorentCard = (props) => {
   console.log("restorent props ", props);
   const { data } = props;
